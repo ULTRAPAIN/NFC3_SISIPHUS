@@ -17,7 +17,7 @@ export default function CardComponent({ title, content }: cardType) {
         <CardTitle className="text-lg">{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <CardDescription className="text-3xl font-black color-black">
+        <CardDescription className="text-xl font-black color-black">
           {content}
         </CardDescription>
       </CardContent>
