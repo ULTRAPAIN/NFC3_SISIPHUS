@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 const notifications = [
   {
     title: "Disha Foundation",
@@ -43,6 +44,7 @@ export default function UserOrganisationList({
 }: {
   inputText: string;
 }) {
+  const navigate = useNavigate()
   const filteredData = notifications.filter((notification) => {
     if (inputText === "") {
       return notification;
@@ -50,6 +52,13 @@ export default function UserOrganisationList({
       return notification.title.toLowerCase().includes(inputText);
     }
   });
+  const handleDonateClick = (title: string) => {
+    // Encode the title to make it URL-safe
+    const encodedTitle = encodeURIComponent(title);
+    console.log(encodedTitle)
+    // Navigate to the donation page with the title as a query parameter
+    // navigate(`/donation?title=${encodedTitle}`);
+  };
   return (
     <div>
       {filteredData.map((notification, index) => (
@@ -68,7 +77,7 @@ export default function UserOrganisationList({
               </p>
             </div>
             <div className="flex flex-col justify-end">
-              <Button >Donate</Button>
+              <Button onClick={()=>{handleDonateClick(notification.title)}}>Donate</Button>
             </div>
           </div>
         </div>
