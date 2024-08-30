@@ -41,7 +41,7 @@ export default function UserHome(){
           {/* Logo and Title */}
           <div className="flex items-center p-4 space-x-4">
             <img src={logo} alt="Logo" className="w-8 h-8" />
-            <div className="text-xl font-bold">Sisiphus-Donaty</div>
+            <div className="text-xl font-bold">CharityOnChain</div>
           </div>
     
           {/* Navigation Links */}
